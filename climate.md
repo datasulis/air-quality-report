@@ -1,6 +1,7 @@
 ---
 title: "Climate Summary"
 output: html_document
+layout: post
 ---
 
 
