@@ -1,6 +1,6 @@
-# Air Quality Report
+# Air Quality Analytics
 
-Created at the BathHacked Air Quality hack day, this project aims to answer two questions:
+Created at [the BathHacked Air Quality hack day](http://www.bathhacked.org/news/air-quality-hack-20-september/), this project aims to answer two questions:
 
 1. Can we provide Bath citizens with more insight into the air quality for Bath?
 2. Can we provide the local council with new ways to generate meaningful visualisations and summary reports?
