@@ -1,0 +1,86 @@
+---
+layout: "post"
+title: "Bath Air Quality Report -- London Road AURN"
+output: html_document
+---
+
+# Bath Air Quality Report -- London Road AURN (`r paste(dates, collapse="-")`)
+
+The report shows levels of nitrogen-oxide pollutants for the period `r paste(dates, collapse="-")`. The report 
+used data from the London Road AURN site.
+
+## Wind Speeds and Direction
+
+The following diagram, known as a *wind rose* plots the frequency of wind speed/direction frequencies. Longer slices indicate 
+directions from which stronger winds are more frequently found. The slices are colour coded based on the wind strength.
+
+```{r echo=FALSE, fig.retina=2, dpi=120}
+windRose(londonRd, paddle=FALSE, main="Wind Rose from London Road AURN")
+```
+
+The following diagram shows the same information, but broken out by season of the year.
+
+```{r echo=FALSE, fig.retina=2, dpi=120}
+windRose(londonRd, paddle=FALSE, main="Seasonal Wind Rose from London Road AURN", type="season")
+```
+
+>**Insight**: The prevailing winds in Bath are from the west and south-west. However earlier in the year, winds are more often found from an easterly direction.
+
+## Pollution Times
+
+Levels of pollutants often vary with the time of day, week and season. This is particularly true for man-made 
+pollutants. The following diagrams show this information from a number of perspectives.
+
+### How do pollutant levels vary by time of day?
+
+```{r echo=FALSE, fig.retina=2, dpi=120}
+timeVariation(londonRd, main="Variation of NOx levels by time of day")
+```
+
+>**Insight**: Nitrogen levels in Bath are highest at early morning and late afternoon. Levels are highest 
+in the week and lower at weekends.
+
+The following calendar views show which days of the year had the highest levels of Nitrogen-Oxides for 
+the start and end of the reporting period.
+
+```{r echo=FALSE, fig.retina=2, dpi=120}
+calendarPlot(londonRd, main=paste("Calendar view of NOx levels for ", from), year=to)
+```
+
+```{r echo=FALSE, fig.retina=2, dpi=120}
+calendarPlot(londonRd, main=paste("Calendar view of NOx levels for ", to), year=to)
+```
+
+## Pollution Levels
+
+What are the trends in pollutants during the reporting period?
+
+The following chart shows the average weekly nitrogen oxide pollutant levels.
+
+```{r echo=FALSE, fig.retina=2, dpi=120}
+timePlot(londonRd, pollutant=c("nox", "no2", "no"), avg.time="month", smooth=TRUE, main="Average weekly pollutant levels")
+```
+
+To better highlight the general trends the following chart normalises the average annual figures using ```r from` as a baseline year.
+
+```{r echo=FALSE, fig.retina=2, dpi=120}
+timePlot(londonRd, pollutant=c("nox", "no2", "no"), avg.time="year", smooth=TRUE, main="Normalised average annual pollutant levels", normalise=paste("1/1/", from, sep=""))
+```
+
+>**Insight**: the general trend for nitrogen oxides is dropping
+
+## Effect of Wind on Pollution
+
+The following *pollution rose* shows the effect of wind speed and direction on nitrogen-oxide pollution.
+
+```{r echo=FALSE}
+percentileRose(londonRd, smooth=TRUE)
+```
+
+The diagram is broken down by season to look for seasonal influences
+
+```{r echo=FALSE}
+ percentileRose(londonRd, smooth=TRUE, type="season")
+```
+
+>**Insight**: there doesn't appear to be any major contribution from wind speed.
