@@ -31,13 +31,13 @@ The code in this project draws on several sources:
 * [Weather data](https://data.bathhacked.org/Historic-Data/weather/3jiu-nb4x) from a local amateur weather station
 * Historical [air quality data from the AURN network](http://uk-air.defra.gov.uk/networks/site-info?uka_id=UKA00306), specifically London Road
 
-## The Application
+## Application Overview
 
-The scripts are based on [R](http://www.r-project.org/) and use [the OpenAir package](http://www.openair-project.org/) for data analysis. [Knitr](http://yihui.name/knitr/) is used for generating dynamic reports as HTML. The reports are then published to github pages in this project.
+The scripts are based on [R](http://www.r-project.org/) and use [the OpenAir package](http://www.openair-project.org/) for data analysis. All development was done in [RStudio](http://www.rstudio.com/).
 
-All development was done in [RStudio](http://www.rstudio.com/).
+[Knitr](http://yihui.name/knitr/) is used for generating dynamic reports as static HTML. These documents are then published to github pages hosted in this project.
 
-## Generating the Report
+## Generating a Report
 
 The initial London Road report can be generated entirely from the openair package which supports importing data directly from the DEFRA AURN data archive:
 
