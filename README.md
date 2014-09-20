@@ -39,10 +39,22 @@ All development was done in [RStudio](http://www.rstudio.com/).
 
 ## Generating the Report
 
+The initial London Road report can be generated entirely from the openair package which supports importing data directly from the DEFRA AURN data archive:
+
 ```
 Rscript londonRoadReport.R /path/to/directory/ 2010 2013
 ```
 
+The additional R scripts provide support for preparing other data for analysis with OpenAir and some test plots. You will need to manually download copies of the datasets from Socrata. The historical data should be saved as `historical-air-quality.csv` and the weather data as `weather.csv`:
+
+
+* `create-wind-data.R` -- extract wind measurements from the weather data, converting it into a data frame suitable for use with openair
+* `create-weather-data.R` -- as above but includes measurements for precipation, etc.
+* `generate-weather-plots.R` -- generate some plots from the data file generated from the above script. See links below for the example output.
+
 ## Example Reports
 
 * [London Road AURN report for 1997-2013](http://datasulis.org/air-quality-report/london-road-aurn.html) -- contains report showing wind direction, time of day of pollutants, general trends and effects of wind.
+
+There are also some example charts showing the [weather conditions from an amateur weather station](http://datasulis.org/air-quality-report/weather-conditions-local-station.png) and comparisons of [a wind rose from a local station](http://datasulis.org/air-quality-report/wind-rose-local-station.png) and [the wind data from the AURN site](http://datasulis.org/air-quality-report/wind-rose-london-road.png).
+
