@@ -62,3 +62,8 @@ The additional R scripts provide support for preparing other data for analysis w
 
 There are also some example charts showing the [weather conditions from an amateur weather station](http://datasulis.org/air-quality-report/weather-conditions-local-station.png) and comparisons of [a wind rose from a local station](http://datasulis.org/air-quality-report/wind-rose-local-station.png) and [the wind data from the AURN site](http://datasulis.org/air-quality-report/wind-rose-london-road.png).
 
+## LICENCE
+
+The code and supporting documentation in this project is placed into the public domain using [the CC0 waiver](http://creativecommons.org/publicdomain/zero/1.0/).
+
+The example report contains data published under [the Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/).
