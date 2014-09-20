@@ -39,7 +39,11 @@ The scripts are based on [R](http://www.r-project.org/) and use [the OpenAir pac
 
 ## Generating a Report
 
-The initial London Road report can be generated entirely from the openair package which supports importing data directly from the DEFRA AURN data archive:
+The initial report uses data from a site on [London Road](http://uk-air.defra.gov.uk/networks/site-info?uka_id=UKA00306). This report can be generated entirely from the openair package which provides [a function](http://www.inside-r.org/packages/cran/openair/docs/importAURN) for importing data directly from [the DEFRA AURN data archive](http://uk-air.defra.gov.uk/data/).
+
+The report accepts three parameters: the path to the directory where the output should be generated and the start and end year for the report. The AURN archive contains data from 1997 (part year) through to 2013.
+
+Example:
 
 ```
 Rscript londonRoadReport.R /path/to/directory/ 2010 2013
