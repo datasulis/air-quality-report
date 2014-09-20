@@ -37,6 +37,12 @@ The scripts are based on [R](http://www.r-project.org/) and use [the OpenAir pac
 
 All development was done in [RStudio](http://www.rstudio.com/).
 
+## Generating the Report
+
+```
+Rscript londonRoadReport.R /path/to/directory/ 2010 2013
+```
+
 ## Example Reports
 
-TODO!
+* [London Road AURN report for 1997-2013](http://datasulis.org/air-quality-report/london-road-aurn.html) -- contains report showing wind direction, time of day of pollutants, general trends and effects of wind.
